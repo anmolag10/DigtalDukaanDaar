@@ -9,5 +9,9 @@ def homeView(request, *args, **kwargs):
 def itemsView(request, *args, **kwargs):
 	return
 
+def profileView(request, *args, **kwargs):
+	return render(request, 'edit_profile_form.html')
+
+
 def aboutView(request, *args, **kwargs):
 	return

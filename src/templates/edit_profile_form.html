@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <title>edit profile form - Bootdey.com</title>
+    <link href="{% static 'css/styles.css '%}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container bootstrap snippets bootdey">
+    <h1 class="clrtxt"><span class="glyphicon glyphicon-user clrtxt"></span>Edit Profile</h1>
+      <hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Upload a different photo...</h6>
+
+          
+            <form action="" method="post">
+              <input type="file" class="form-control">
+              <div class="upload-btn-container">
+                <button type="button" class="btn btn-success btn2">Upload</button>
+              </div>
+            </form>
+         
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        {% comment %}
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
+        {% end comment %}
+
+        <h3>Personal info</h3>
+        
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">User Name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="dey-dey">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Pin Code:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="bootdey">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Address:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="">
+            </div>
+          </div>
+          <!-- only for retailers and suppliers -->
+          <div class="form-group">
+            <label class="col-lg-3 control-label">GSTIN :</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="janesemail@gmail.com">
+            </div>
+          <!-- only for retailers and suppliers -->
+
+          </div>
+          <div class="aligned-div">
+          <button type="button" class="btn btn-success btn1">Submit</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<hr>
+
+<style type="text/css">
+				                
+body{margin-top:20px;}				              
+</style>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
