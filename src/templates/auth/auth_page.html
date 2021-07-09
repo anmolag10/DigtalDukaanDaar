@@ -1,0 +1,108 @@
+{% extends 'auth/layout.html' %}
+{% load static %}
+
+
+
+{% block specif_style %}
+<link rel="stylesheet" href= "{% static 'auth/css/login.css'%}">
+
+<link rel="stylesheet" href="{% static 'auth/css/font-awesome.min.css' %}">
+
+
+
+
+<link rel="stylesheet" href="{% static 'auth/css/responsive.css' %}">
+
+{% endblock specif_style %}
+
+{% block content %}
+
+
+<div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="{% url 'post-auth' is_signin='0' %}" method = "POST">
+                {% csrf_token %}
+                <h1>Create Account</h1>
+                <br>
+                {% comment %} <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div> {% endcomment %}
+                <span>Use your email for registration</span>
+                <input type="number" placeholder="Pin-Code" name = "pinCode">
+                <input type="text" placeholder="Name" name = "userName"/>
+                <input type="email" placeholder="Email" name = "signUpEmail"/>
+                <input type="password" placeholder="Password" name = "signUpPassWord"/>
+                <!-- Type Selector -->
+                <div class = "create-select-topic">
+                    <label>Choose Type</label>
+                    <select name = "userType">
+                        <option Value = "1">Supplier</option>
+                        <option Value = "2">Retailer</option>
+                        <option Value = "3">Customer</option>
+                    </select>
+                </div>
+                <br>
+
+                <button>Sign Up</button>
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.extra_tags == "EMAIL_ALREADY_EXISTS" %}
+                            <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>
+
+                        {% elif message.extra_tags == "INSUFFICIENT_DATA_SIGNUP" %}      
+                            <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>        
+                        {% endif %}
+
+                    {% endfor %}
+                {% endif %}
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="{% url 'post-auth' is_signin='1' %}" method="POST">
+                {% csrf_token %}
+                <h1>Sign in</h1>
+                {% comment %} <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div> {% endcomment %}
+                <br>
+                <span>Use your account</span>
+                <input type="email" placeholder="Email" name = "signInEmail" />
+                <input type="password" placeholder="Password" name = "signInPassword" />
+                <a href="/reset-password/">Forgot your password?</a>
+                <br>
+                <button>Sign In</button>
+                 {% if messages %}
+                    {% for message in messages %}
+                        {% if message.extra_tags == "INVALID_CREDS_SIGNIN" %}      
+                            <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>     
+                        {% elif message.extra_tags == "INSUFFICIENT_DATA_SIGNIN"%}      
+                            <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>        
+                      
+                        {% endif %}
+
+                    {% endfor %}
+                {% endif %}
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	</div>
+	</div>
+{% endblock content %}
