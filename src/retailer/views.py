@@ -10,5 +10,8 @@ def supplyView(request):
 def itemsView(request):
 	return
 
-def manageStoreView(request):
+def manageItemView(request):
+	return render(request, 'Retailer/Manage-Items.html')
+
+def analyticsView(request):
 	return

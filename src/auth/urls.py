@@ -1,8 +1,7 @@
-from django.urls import path, include
-from . import views as authViews
+from django.urls import path
+from . import views as signViews
 
 urlpatterns = [
-    path('supplier/<is_signin>/', authViews.supAuthView, name = "sup-auth-page"),
-    path('retailer/<is_signin>/', authViews.retAuthView, name = "ret-auth-page"),
-    path('customer/<is_signin>/', authViews.custAuthView, name = "cust-auth-page"),
+    path('', signViews.authView, name ='auth-page'),
+    path('<is_signin>/', signViews.postAuthView, name='post-auth')
 ]
