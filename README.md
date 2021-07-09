@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/anmolag10/Hackathon_Dev">
+  <a href="https://github.com/anmolag10/1_PacManBytes">
     <img src="https://firebasestorage.googleapis.com/v0/b/pacmanbytes-8b0c7.appspot.com/o/Asset%206.png?alt=media&token=08aa9252-22a3-4bcb-8fb7-f1c11ff71df9" alt="Logo" width="260" height="150">
   </a>
 
@@ -11,14 +11,14 @@
   <p align="center">
     a line about the project...............................................
     <br />
-    <a href="https://github.com/anmolag10/Hackathon_Dev/blob/main/README.md"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/anmolag10/1_PacManBytes/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/anmolag10/Hackathon_Dev/blob/main/README.md">View Demo</a>
+    <a href="https://github.com/anmolag10/1_PacManBytes/blob/main/README.md">View Demo</a>
     ·
-    <a href="https://github.com/anmolag10/Hackathon_Dev/blob/issues">Report Bug</a>
+    <a href="https://github.com/anmolag10/1_PacManBytes/issues">Report Bug</a>
     ·
-    <a href="https://github.com/anmolag10/Hackathon_Dev/blob/issues">Request Feature</a>
+    <a href="https://github.com/anmolag10/1_PacManBytes/issues">Request Feature</a>
   </p>
 </p>
 
@@ -49,6 +49,13 @@ few lines about the project ....................................................
 
 ### Built With
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+
+<a href="https://getbootstrap.com/">
+    <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap logo" width="60" height="50">
+</a>
 
 <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
 
