@@ -14,7 +14,7 @@
 <div class="form-holder">
 <div class="row">
   <div class="col-md-12">
-    <form action="/retailer/creat_items/" method="POST" class="for">
+    <form action="/retailer/create_items/" method="POST" class="for">
       {% csrf_token %}
       <h1> Sell A New Product </h1>
       
@@ -68,10 +68,10 @@
 
       {% if messages %}
         {% for message in messages %}
-            {% if message.extra_tags == "EMAIL_ALREADY_EXISTS" %}
+            {% if message.extra_tags == "NETWORK_ERROR" %}
                 <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>
 
-            {% elif message.extra_tags == "INSUFFICIENT_DATA_SIGNUP" %}      
+            {% elif message.extra_tags == "INSUFFICIENT_DATA_PRODUCT" %}      
                 <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>        
             {% endif %}
 
