@@ -211,9 +211,20 @@
                   id="navbarDropdownMenuLink"
                   data-toggle="dropdown"
                 >{{ user_name }}</a>
-
+              {% endif %}
                 {% if user_type == "1" %}
                 <div class="dropdown-menu">
+
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="margin:auto;"
+                        href="{% url 'cust-cart-page' %}"
+                        >Cart</a
+                      >
+                    </div>
+
                   <div class="row">
                     <div class="col-sm">
                       <a
@@ -225,21 +236,24 @@
                     </div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-sm">
-                      <a
-                        class="dropdown-item"
-                        style="margin:auto;"
-                        href="{% url 'cart' %}"
-                        >cart</a
-                      >
-                    </div>
                   </div>
 
                 </div>
 
-                {% "elif user_type == "2" %}
+                {% elif user_type == "2" %}
                 <div class="dropdown-menu">
+
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="margin:auto;"
+                        href="{% url 'ret-merger' %}"
+                        >Mergers</a
+                      >
+                    </div>
+                  </div>
+
                   <div class="row">
                     <div class="col-sm">
                       <a
@@ -250,6 +264,7 @@
                       >
                     </div>
                   </div>
+
                 </div>
 
               </li>

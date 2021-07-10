@@ -1,14 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
   
   body {
     font-family: "Poppins", sans-serif;
   }
   
   
+  .container-merger{
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
   
   .small-container {
     max-width: 1080px;

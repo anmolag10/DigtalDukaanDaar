@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block specific_styles %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,9 +17,11 @@
       crossorigin="anonymous"
     ></script>
     <title>Document</title>
-    <link rel="stylesheet" href="css/merger.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="{% static 'css/merger.css' %}" />
+{% endblock specific_styles %}
+ 
+ {% block content %}
+ <div class="container-merger">
     <div class="small-container">
       <!---Apply For Loooooopppppp Here -->
       <div class="row request">
@@ -75,5 +78,5 @@
       </div>
       </div>
     </div>
-  </body>
-</html>
+
+{% endblock content %}

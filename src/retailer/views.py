@@ -124,3 +124,6 @@ def manageItemView(request):
 
 def analyticsView(request):
 	return
+
+def mergerView(request):
+	return render(request, 'merger.html')
