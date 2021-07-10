@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'Retailer/retailform.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'Retailer/retailform.css' %}"> -->
+        <link rel="stylesheet" href="../../static/Retailer/retailform.css">
 {% endblock specific_styles %}
 
 {% block content %}
@@ -17,23 +18,23 @@
       <h1> Sell A New Product </h1>
       
       <fieldset>
-        <legend><span class="number"></span> Product Info </legend>
+        <legend><span class="number">1</span> Product Info </legend>
         <label for="Product">Product Name:</label>
 
-        <input type="text1" id="Product" name="productName">
+        <input type="text1" id="Product" name="productName" class="itemreg">
 
           
         <label for="Prod_desc">Product Description:</label>
-        <textarea id="Prod_desc" name="prodDesc"></textarea>
+        <textarea id="Prod_desc" name="prodDesc" class="itemreg"></textarea>
       
         <label for="Price">Price:</label>
-        <input type="number" id="Price" name="prodPrice">
+        <input type="number" id="Price" class="itemreg" name="prodPrice">
       
         
       
      
         <label for="Pro_photo">Add a photo of the product to display:</label>
-        <input type="file" id="Pro_photo" name="prodImg" accept="image/*">
+        <input type="file" id="Pro_photo" name="prodImg" class="itemreg" accept="image/*">
       
       </fieldset>
       <fieldset>  
@@ -42,7 +43,7 @@
      
       
        <label for="Catergory">Category:</label>
-        <select type="option" id="Category" name="prodCategory" >
+        <select type="option" id="Category" name="prodCategory" class="itemreg" >
             <option value="Dairy Product">Dairy Product</option>
             <option value="Fruits">Fruits</option>
             <option value="Vegetables">Vegetables</option>
@@ -52,14 +53,14 @@
         </select>
 
         <label for="Type">Type:</label>
-        <select type="option" id="Type" name="prodType">
+        <select type="option" id="Type" name="prodType" class="itemreg">
             <option value="Packaged">Packaged</option>
             <option value="Loose">Loose</option>
         </select>
 
         
         <label for="Quantity">Quantity:</label>
-        <input type="number" id="Quantity" name="prodQuatity">
+        <input type="number" id="Quantity" name="prodQuatity" class="itemreg">
        </fieldset>
      
       <button type="submit1">Register Product</button>
