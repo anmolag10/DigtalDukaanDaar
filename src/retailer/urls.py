@@ -6,5 +6,6 @@ urlpatterns = [
     path('supplies/', retailerViews.supplyView, name = 'ret-supply-page'),
     path('items/', retailerViews.itemsView, name = 'ret-items-page'),
     path('manage_items/', retailerViews.manageItemView, name = 'ret-manage-page'),
+    path('create_items/', retailerViews.createProductView, name = 'ret-create-page'),
     path('analytics/', retailerViews.analyticsView, name = 'ret-analytics'),
 ]

@@ -57,7 +57,7 @@ def storesView(request, *args, **kwargs):
 def homeView(request, *args, **kwargs):
 	user_name, logged_in, user_uid = checkLogIn(request)
 	context = {
-		"user_name":user_name,
+		"user_name":user_name[:17],
 		"logged_in":logged_in,
 		"def_pin": 574101,
 	}

@@ -39,6 +39,7 @@ def postAuthView(request, is_signin, *args, **kwargs):
 	# Redirecting variables #
 	redirect_auth = redirect('/auth/')
 	redirect_home = redirect('/home/')
+	
 	# sign in #
 	if(is_signin == '1'):
 		email = request.POST.get("signInEmail")
@@ -76,7 +77,6 @@ def postAuthView(request, is_signin, *args, **kwargs):
 						}
 				fb_auth.send_email_verification(user['idToken'])
 				FireStore.collection(u'Users').document(uid).set(data)
-				
 
 			except Exception as e:
 				print(e)

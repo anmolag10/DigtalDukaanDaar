@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +8,7 @@
     <title>Home</title>
     {% block specific_styles %}
     {% endblock specific_styles %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
