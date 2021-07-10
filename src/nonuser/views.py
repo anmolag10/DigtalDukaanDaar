@@ -67,8 +67,7 @@ def homeView(request, *args, **kwargs):
 		context["user_type"] = user["User_Type"]
 		context['def_pin'] = user["Pin_Code"]
 
-
-		
+		print(context)
 
 	return render(request, 'home_view.html', context)
 

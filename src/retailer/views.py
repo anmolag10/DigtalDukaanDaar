@@ -126,4 +126,25 @@ def analyticsView(request):
 	return
 
 def mergerView(request):
-	return render(request, 'merger.html')
+	redirect_home = redirect('/home/')
+	redirect_auth = redirect('/auth/')
+
+	user_name, logged_in, user_uid = checkLogIn(request)
+
+	context = {
+		"user_name":user_name[:17],
+		"logged_in":logged_in,
+		"def_pin": 574101,
+		"user_type": "3",
+	}
+
+	if(not logged_in):
+		return redirect_auth
+	else:
+		user = FireStore.collection(u'Users').document(user_uid).get().to_dict()
+		context["user_type"] = user["User_Type"]
+		context['def_pin'] = user["Pin_Code"]
+		if(user['User_Type'] not in ["2"] ):
+			return redirect_home
+
+	return render(request, 'merger.html', context)
