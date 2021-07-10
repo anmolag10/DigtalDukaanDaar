@@ -69,9 +69,10 @@ def postAuthView(request, is_signin, *args, **kwargs):
 				#adding the user into the database
 				uid = user['localId']
 				data = {u"User_Name": user_name, 
-						u"Uid":uid, 
-						u"Email": new_email,
-						u"User_Type": user_type,
+								u"Uid":uid, 
+								u"Email": new_email,
+								u"User_Type": user_type,
+								u"Pin_Code": pin_code,
 						}
 				fb_auth.send_email_verification(user['idToken'])
 				FireStore.collection(u'Users').document(uid).set(data)
@@ -88,6 +89,7 @@ def postAuthView(request, is_signin, *args, **kwargs):
 
 	session_id = user["localId"]
 	request.session["uid"] = str(session_id)
+	print(1)
 	return redirect_home
 
 

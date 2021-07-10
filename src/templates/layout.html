@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    {% block specific_styles %}
+    {% endblock specific_styles %}
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="
+          navbar navbar-expand-md navbar-dark
+          fixed-top
+          bg-dark
+          justify-content-between
+        "
+      >
+        <a class="navbar-brand" href="#"><bold>DigitalDukaanDaar</bold></a>
+        <div>
+          <form
+            class="form-inline justify-content-center"
+            style="text-align: center"
+          >
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Search"
+              style="width: 576px; margin-right: 10px"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+        <div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  data-toggle="dropdown"
+                >
+                  <i class="fa fa-map-marker"></i> {{ def_pin }}
+                </a>
+                <div
+                  class="dropdown-menu"
+                  style="padding-top: 0px; padding-bottom: 0px"
+                >
+                  <form class="form-inline" action="#">
+                    <input
+                      placeholder="Pincode"
+                      name="pinCodeFilter"
+                      type="number"
+                    />
+                  </form>
+                </div>
+              </li>
+
+
+              {% if logged_in == 1 %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'cust-cart-page' %}">
+                    <i class="fa fa-shopping-cart"></i>
+                  </a>
+                <li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'auth-page' %}">
+                    <i class="fa fa-shopping-cart"></i>
+                  </a>
+                <li>
+              {% endif %}
+
+                {% comment %}
+
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="padding-left: 15px; padding-right: 10px"
+                        href="#"
+                        >Product1</a
+                      >
+                    </div>
+                    <div class="col-sm">
+                      <form action="/">
+                        <button class="cart-delete" type="submit">
+                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="padding-left: 15px; padding-right: 10px"
+                        href="#"
+                        >Product1</a
+                      >
+                    </div>
+                    <div class="col-sm">
+                      <form action="/">
+                        <button class="cart-delete" type="submit">
+                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="padding-left: 15px; padding-right: 10px"
+                        href="#"
+                        >Product1</a
+                      >
+                    </div>
+                    <div class="col-sm">
+                      <form action="/">
+                        <button class="cart-delete" type="submit">
+                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="padding-left: 15px; padding-right: 10px"
+                        href="#"
+                        >Product1</a
+                      >
+                    </div>
+                    <div class="col-sm">
+                      <form action="/">
+                        <button class="cart-delete" type="submit">
+                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="padding-left: 15px; padding-right: 10px"
+                        href="#"
+                        >Product1</a
+                      >
+                    </div>
+                    <div class="col-sm">
+                      <form action="/">
+                        <button class="cart-delete" type="submit">
+                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <span class="dropdown-item">Total Price: </span>
+                </div>
+
+              {% endcomment %}
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              {% if logged_in == 0 %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'auth-page' %}">Log in</a>
+              </li>
+              {% elif logged_in == 1 %}
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  data-toggle="dropdown"
+                >{{ user_name }}</a>
+
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="margin:auto;"
+                        href="{% url 'logout' %}"
+                        >Log out</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+
+              {% endif %}
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+    
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 PacManBytes</p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li>
+                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="github" href="#"><i class="fa fa-github"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+</html>
