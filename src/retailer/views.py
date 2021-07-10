@@ -6,7 +6,7 @@ from google.cloud import firestore
 import pyrebase
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-
+from PIL import Image
 # allows you to import stuff from higer levels #
 from os import path
 import sys
@@ -16,6 +16,9 @@ import utils
 
 
 # fire-base init
+BASE_DIR = Path(__file__).resolve().parent.parent
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(BASE_DIR, "FireBase_Creds\\KeyFile.json")
+
 config =  {
   "apiKey" : "AIzaSyA5Du-AtnXcSQ1FSXTBS8iekZMegj3BpLY",
   "authDomain" : "pacmanbytes-8b0c7.firebaseapp.com",
@@ -24,11 +27,12 @@ config =  {
   "storageBucket" : "pacmanbytes-8b0c7.appspot.com",
   "messagingSenderId" : "225279737696",
   "appId" : "1:225279737696:web:e12a66d59c760ab8a2e805",
-  "measurementId": "G-PEDDL109QZ"
+  "measurementId": "G-PEDDL109QZ",
+  "serviceAccount": os.path.join(BASE_DIR, "FireBase_Creds\\KeyFile.json"),
 }
-BASE_DIR = Path(__file__).resolve().parent.parent
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(BASE_DIR, "FireBase_Creds\\KeyFile.json")
-print(os.path.join(BASE_DIR, "FireBase_Creds\\KeyFile.json"))
+
+
+
 fireBase = pyrebase.initialize_app(config)
 fb_auth = fireBase.auth()
 dataBase = fireBase.database()
@@ -62,6 +66,8 @@ def itemsView(request):
 
 def createProductView(request):
 
+	base = Path(__file__).resolve().parent.parent
+	image_dir = os.path.join(base, "ExampleImages\\products")
 	redirect_home = redirect('/home/')
 	redirect_auth = redirect('/auth/')
 
@@ -91,9 +97,22 @@ def createProductView(request):
 	prod_cat = request.POST.get("prodCategory")
 	prod_type = request.POST.get("prodType")
 	prod_quant = request.POST.get("prodQuatity")
+	prod_image = request.POST.get("prodImg")
 
-	if(prod_name and prod_desc and prod_price and prod_cat and prod_quant and prod_type):
+	if(not prod_image):
+		prod_image = ""
+
+	image_dir = os.path.join(image_dir, prod_image)
+	
+	
+	if(prod_name and prod_desc and prod_price and prod_cat and prod_quant and prod_type and prod_image):
 		try:
+			storage = fireBase.storage()
+			# as admin
+			img_id = uuid.uuid1()
+			storage.child("images/"+str(img_id.hex)+".jpg").put(image_dir)
+			img_url = storage.child("images/"+str(img_id.hex)+".jpg").get_url(None)
+
 			gen_id = uuid.uuid1()
 			product = {
 				"Product_Id": str(gen_id.hex),
@@ -104,12 +123,13 @@ def createProductView(request):
 				"Product_Type": prod_type,
 				"Product_Quantity": prod_quant,
 				"Seller_Uid": user_uid,
+				"Img_Url": img_url,
 			}
-			Fire_Store.collection(u'Blog-Posts').document(str(gen_id.hex)).set(Blog_Post)
+
+			FireStore.collection(u'Retail_Product').document(str(gen_id.hex)).set(product)
 			return HttpResponseRedirect("/retailer/manage_items/")
 
 		except Exception as e:
-			print(e)
 			messages.error(request, "Network Error", extra_tags = "NETWORK_ERROR")
 
 	else:

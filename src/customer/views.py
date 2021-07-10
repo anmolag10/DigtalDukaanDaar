@@ -28,7 +28,7 @@ config =  {
 }
 BASE_DIR = Path(__file__).resolve().parent.parent
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(BASE_DIR, "FireBase_Creds\\KeyFile.json")
-print(os.path.join(BASE_DIR, "FireBase_Creds\\KeyFile.json"))
+
 fireBase = pyrebase.initialize_app(config)
 fb_auth = fireBase.auth()
 dataBase = fireBase.database()
@@ -58,10 +58,10 @@ def postPinFilter(request, *args, **kwargs):
 	# redirects #
 
 	pinFilter = request.POST.get('pinCodeFilter')
-	return render(request, 'searchPin.html', )
+	return redirect()
 
-def storesView(request):
-	return
+def storesView(request, *args, **kwargs):
+	return render(request, 'customer-store-item.html')
 
 def itemsView(request):
 	return

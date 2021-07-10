@@ -20,7 +20,7 @@ config =  {
 }
 BASE_DIR = Path(__file__).resolve().parent.parent
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(BASE_DIR, "FireBase_Creds\\KeyFile.json")
-print(os.path.join(BASE_DIR, "FireBase_Creds\\KeyFile.json"))
+
 fireBase = pyrebase.initialize_app(config)
 fb_auth = fireBase.auth()
 dataBase = fireBase.database()

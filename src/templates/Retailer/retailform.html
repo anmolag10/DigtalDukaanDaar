@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
         <!-- <link rel="stylesheet" href="{% static 'Retailer/retailform.css' %}"> -->
-        <link rel="stylesheet" href="../../static/Retailer/retailform.css">
+        <link rel="stylesheet" href="{% static '/Retailer/retailform.css' %}">
 {% endblock specific_styles %}
 
 {% block content %}
@@ -22,7 +22,7 @@
         <legend><span class="number">1</span> Product Info </legend>
         <label for="Product">Product Name:</label>
 
-        <input type="text1" id="Product" name="productName" class="itemreg">
+        <input type="text" id="Product" name="prodName" class="itemreg">
 
           
         <label for="Prod_desc">Product Description:</label>
@@ -36,7 +36,7 @@
      
         <label for="Pro_photo">Add a photo of the product to display:</label>
         <input type="file" id="Pro_photo" name="prodImg" class="itemreg" accept="image/*">
-      
+
       </fieldset>
       <fieldset>  
       
