@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="retailform.css">
+    <title>Retail Form</title>
+</head>
+<body>
+    <div class="row">
+  <div class="col-md-12">
+    <form action="index.html" method="post">
+      <h1> Selling Form</h1>
+      
+      <fieldset>
+        
+        <legend><span class="number">1</span> Product Info</legend>
+        <label for="Product">Product Name:</label>
+        <input type="text" id="Product" name="Product">
+          
+        <label for="Pro_desc">Product Description:</label>
+        <textarea id="Pro_desc" name="user_bio"></textarea>
+      
+        <label for="Price">Price:</label>
+        <input type="number" id="Price" name="Price">
+      
+        
+      
+     
+        <label for="Pro_photo">Add a photo of the product to display:</label>
+        <input type="file" id="Pro_photo" name="img" accept="image/*">
+      
+      </fieldset>
+      <fieldset>  
+      
+        <legend><span class="number">2</span> Details</legend>      
+     
+      
+       <label for="Catergory">Category:</label>
+        <select type="option" id="Category" name="Category" >
+            <option value="Dairy Product">Dairy Product</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Sauces">Sauces</option>
+            <option value="Spices">Spices</option>
+            <option value="Pulces">Pulces</option>
+        </select>
+
+        <label for="Type">Type:</label>
+        <select type="option" id="Type" name="Type">
+            <option value="Packaged">Packaged</option>
+            <option value="Loose">Loose</option>
+            </select>
+
+        
+        <label for="Quantity">Quantity:</label>
+        <input type="number" id="Quantity" name="Quatity">
+       </fieldset>
+     
+      <button type="submit">Register Product</button>
+      
+     </form>
+      </div>
+    </div>
+    
+  </body>
+</html>
+
+</html>
