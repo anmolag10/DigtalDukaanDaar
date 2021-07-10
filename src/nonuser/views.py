@@ -60,11 +60,16 @@ def homeView(request, *args, **kwargs):
 		"user_name":user_name[:17],
 		"logged_in":logged_in,
 		"def_pin": 574101,
+		"user_type": "3",
 	}
 	if(logged_in):
 		user = FireStore.collection(u'Users').document(user_uid).get().to_dict()
 		request.session["curr_pin"] = user["Pin_Code"]
+		request.session["user_type"] = user["User_Type"]
+		context["user_type"] = user["User_Type"]
 		context['def_pin'] = user["Pin_Code"]
+
+	
 		
 
 	return render(request, 'home_view.html', context)

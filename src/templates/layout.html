@@ -45,7 +45,7 @@
           justify-content-between
         "
       >
-        <a class="navbar-brand" href="#"><bold>DigitalDukaanDaar</bold></a>
+        <a class="navbar-brand" href="{% url 'home-page' %}"><bold>DigitalDukaanDaar</bold></a>
         <div>
           <form
             class="form-inline justify-content-center"
@@ -62,57 +62,58 @@
             </button>
           </form>
         </div>
-        <div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  data-toggle="dropdown"
-                >
-                  <i class="fa fa-map-marker"></i> {{ def_pin }}
-                </a>
-                <div
-                  class="dropdown-menu"
-                  style="padding-top: 0px; padding-bottom: 0px"
-                >
-                  <form class="form-inline" action="#">
-                    <input
-                      placeholder="Pincode"
-                      name="pinCodeFilter"
-                      type="number"
-                    />
-                  </form>
-                </div>
-              </li>
-
-
-              {% if logged_in == 1 %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'cust-cart-page' %}">
-                    <i class="fa fa-shopping-cart"></i>
+        {% if user_type == "3" %}
+          <div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarCollapse"
+              aria-controls="navbarCollapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    data-toggle="dropdown"
+                  >
+                    <i class="fa fa-map-marker"></i> {{ def_pin }}
                   </a>
-                <li>
-              {% else %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'auth-page' %}">
-                    <i class="fa fa-shopping-cart"></i>
-                  </a>
-                <li>
-              {% endif %}
+                  <div
+                    class="dropdown-menu"
+                    style="padding-top: 0px; padding-bottom: 0px"
+                  >
+                    <form class="form-inline" action="#">
+                      <input
+                        placeholder="Pincode"
+                        name="pinCodeFilter"
+                        type="number"
+                      />
+                    </form>
+                  </div>
+                </li>
+            {% endif %}
+              
+                {% if logged_in == 1 %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cust-cart-page' %}">
+                      <i class="fa fa-shopping-cart"></i>
+                    </a>
+                  <li>
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'auth-page' %}">
+                      <i class="fa fa-shopping-cart"></i>
+                    </a>
+                  <li>
+                {% endif %}
 
                 {% comment %}
 
@@ -208,7 +209,7 @@
               {% endcomment %}
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="{% url 'home-page' %}">Home</a>
               </li>
               {% if logged_in == 0 %}
               <li class="nav-item">
