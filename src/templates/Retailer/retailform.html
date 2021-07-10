@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
         <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="retailform.css">
+        <link rel="stylesheet" href="../../static/Retailer/retailform.css">
 {% endblock specific_styles %}
 
 {% block content %}
-    <div class="row">
+<div class="row">
   <div class="col-md-12">
     <form action="/retailer/creat_items/" method="POST">
       {% csrf_token %}
@@ -75,6 +75,8 @@
       
      </form>
       </div>
-    </div>
+</div>
     
 {% endblock content %}
+
+
