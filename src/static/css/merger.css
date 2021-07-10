@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  
+  
+  .small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .request
+  {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    margin-bottom: 10px;
+  }
+
+  .card-header
+  {
+    background-color: rgb(203, 228, 178);
+  
+    margin-top: 10px;
+    padding-top: 10px;
+    border: 2px solid  rgb(203, 228, 178);
+    border-radius: 25px;
+  }
+
+  .card
+  {
+    border: 2px solid  green;
+    border-radius: 25px;
+  }
+
+  
