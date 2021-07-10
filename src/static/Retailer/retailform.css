@@ -26,17 +26,16 @@
   
   input[type="text1"],
   input[type="file"],
-  input[type="password"],
   input[type="date"],
   input[type="datetime"],
   input[type="email"],
   input[type="number"],
-  input[type="search"],
   input[type="tel"],
   input[type="time"],
   input[type="url"],
   select[type="option"],
-  textarea,
+  textarea, 
+  submit
   {
     border: none;
     font-size: 16px;
@@ -50,11 +49,6 @@
     color: #424649;
     box-shadow: 0 0 10px rgb(70, 95, 68);
     margin-bottom: 30px;
-  }
-  
-  input[type="radio"],
-  input[type="checkbox"] {
-    margin: 0 4px 8px 0;
   }
   
   select {
