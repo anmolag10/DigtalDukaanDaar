@@ -212,7 +212,7 @@
                   data-toggle="dropdown"
                 >{{ user_name }}</a>
               {% endif %}
-                {% if user_type == "1" %}
+                {% if user_type == "3" %}
                 <div class="dropdown-menu">
 
                   <div class="row">
@@ -224,6 +224,7 @@
                         >Cart</a
                       >
                     </div>
+                  </div>
 
                   <div class="row">
                     <div class="col-sm">
@@ -236,7 +237,6 @@
                     </div>
                   </div>
 
-                  </div>
 
                 </div>
 
@@ -250,6 +250,17 @@
                         style="margin:auto;"
                         href="{% url 'ret-merger' %}"
                         >Mergers</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="margin:auto;"
+                        href="{% url 'ret-create-page' %}"
+                        >Sell a product</a
                       >
                     </div>
                   </div>
