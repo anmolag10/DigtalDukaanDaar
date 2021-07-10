@@ -37,7 +37,7 @@
   input[type="url"],
   select[type="option"],
   textarea,
-  select {
+  {
     border: none;
     font-size: 16px;
     border-radius: 10px;
