@@ -212,6 +212,33 @@
                   data-toggle="dropdown"
                 >{{ user_name }}</a>
 
+                {% if user_type == "1" %}
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="margin:auto;"
+                        href="{% url 'logout' %}"
+                        >Log out</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="margin:auto;"
+                        href="{% url 'cart' %}"
+                        >cart</a
+                      >
+                    </div>
+                  </div>
+
+                </div>
+
+                {% "elif user_type == "2" %}
                 <div class="dropdown-menu">
                   <div class="row">
                     <div class="col-sm">
@@ -228,7 +255,7 @@
               </li>
 
               {% endif %}
-              
+
               {% if logged_in == 1 %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'cust-cart-page' %}">
@@ -247,7 +274,7 @@
         </div>
       </nav>
     </header>
-
+    
     {% block content %}
     {% endblock content %}
     

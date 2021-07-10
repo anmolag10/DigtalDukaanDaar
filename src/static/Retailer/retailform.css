@@ -4,6 +4,11 @@
     box-sizing: border-box;
   }
   
+  .form-holder{
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
   body {
     font-family: 'Nunito', sans-serif;
     color: #426e3c;
@@ -12,7 +17,7 @@
   
   .for {
     width: 500px !important;
-    margin: 20px ;
+    margin: auto ;
     padding: 10px 20px;
     background: #c7e9b0;
     border-radius: 8px;
@@ -90,7 +95,7 @@
     margin-right: 4px;
     line-height: 30px;
     text-align: center;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 0.3px 0 rgba(255,255,255,0.2);
     border-radius: 100%;
   }
   
