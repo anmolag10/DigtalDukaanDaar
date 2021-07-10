@@ -62,7 +62,6 @@
             </button>
           </form>
         </div>
-        {% if user_type == "3" %}
           <div>
             <button
               class="navbar-toggler"
@@ -77,6 +76,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav ml-auto">
+                {% if user_type == "3" %}
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
@@ -101,19 +101,7 @@
                 </li>
             {% endif %}
               
-                {% if logged_in == 1 %}
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cust-cart-page' %}">
-                      <i class="fa fa-shopping-cart"></i>
-                    </a>
-                  <li>
-                {% else %}
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'auth-page' %}">
-                      <i class="fa fa-shopping-cart"></i>
-                    </a>
-                  <li>
-                {% endif %}
+                
 
                 {% comment %}
 
@@ -240,7 +228,20 @@
               </li>
 
               {% endif %}
-
+              
+              {% if logged_in == 1 %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cust-cart-page' %}">
+                      <i class="fa fa-shopping-cart"></i>
+                    </a>
+                  <li>
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'auth-page' %}">
+                      <i class="fa fa-shopping-cart"></i>
+                    </a>
+                  <li>
+                {% endif %}
             </ul>
           </div>
         </div>

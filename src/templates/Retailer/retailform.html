@@ -62,8 +62,10 @@
         <label for="Quantity">Quantity:</label>
         <input type="number" id="Quantity" name="prodQuatity" class="itemreg">
        </fieldset>
-     
+        
+    <div class='btn-hldr'> 
       <button type="submit1">Register Product</button>
+    </div>
       {% if messages %}
         {% for message in messages %}
             {% if message.extra_tags == "EMAIL_ALREADY_EXISTS" %}
