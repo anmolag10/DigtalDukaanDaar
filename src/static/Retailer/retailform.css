@@ -10,7 +10,7 @@
     background-color: #d6e9ca;
   }
   
-  form {
+  .for {
     width: 500px !important;
     margin: 20px ;
     padding: 10px 20px;
@@ -96,7 +96,7 @@
   
   @media screen and (min-width: 480px) {
   
-    form {
+    .for {
       max-width: 480px;
     }
   
