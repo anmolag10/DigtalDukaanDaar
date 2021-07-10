@@ -45,7 +45,7 @@
     border-radius: 2px;
   }
   
-  div.btn-hldr  button {
+  .button {
     padding: 19px 39px 18px 39px;
     color: #FFF;
     background-color: #40684c;
