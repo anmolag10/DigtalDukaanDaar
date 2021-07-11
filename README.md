@@ -1,4 +1,4 @@
-# DigitalDukaanDaar
+<h1 align="center">DigitalDukaanDaar</h1>
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -10,7 +10,7 @@
 
   <p align="center">
   <img src="Images/2.jpg" >
-  <img src="#">
+  <img src="Images/6.jpg">
     <br />
     <a href="https://github.com/anmolag10/1_PacManBytes/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
@@ -81,9 +81,10 @@ few lines about the project ....................................................
 
     In Windows
     ```bash
-    python -m venv venv
+   py -m venv env
     
-    venv\Scripts\activate
+   .\env\Scripts\activate
+
     ```
 
     In Ubuntu/MacOS
