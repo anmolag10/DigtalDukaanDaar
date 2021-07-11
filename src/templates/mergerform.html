@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/mergerform.css" />
     
 </head>
-<body>
+{% block content %}
+<div class="page-container">
     <form class="form">
         <h2 >Merger Request</h2>
         <h3>Product Name: Avacado</h3>
@@ -18,5 +19,5 @@
         <button>Send  Request</button>
         
       </form>
-</body>
-</html>
+</div>
+{% endblock content %}

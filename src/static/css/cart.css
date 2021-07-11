@@ -113,3 +113,9 @@ th:last-child {
   .cart-info p {
     display: none;
   }
+
+.page-container {
+  margin: auto;
+  padding-top: 100px;
+  margin-bottom: 100px;
+}

@@ -76,7 +76,7 @@ def createProductView(request):
 	context = {
 		"user_name":user_name[:17],
 		"logged_in":logged_in,
-		"def_pin": 574101,
+		"def_pin": "574101",
 		"user_type": "3",
 		"toggle": 0,
 	}
@@ -149,7 +149,7 @@ def manageItemView(request):
 	context = {
 		"user_name":user_name[:17],
 		"logged_in":logged_in,
-		"def_pin": 574101,
+		"def_pin": "574101",
 		"user_type": "3",
 		"toggle": 0,
 	}
@@ -189,7 +189,7 @@ def mergerView(request):
 	context = {
 		"user_name":user_name[:17],
 		"logged_in":logged_in,
-		"def_pin": 574101,
+		"def_pin": "574101",
 		"user_type": "3",
 		"toggle": 0,
 	}
@@ -214,7 +214,7 @@ def mergerStatusView(request):
 	context = {
 		"user_name":user_name[:17],
 		"logged_in":logged_in,
-		"def_pin": 574101,
+		"def_pin": "574101",
 		"user_type": "3",
 		"toggle": 0,
 	}

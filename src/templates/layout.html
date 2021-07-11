@@ -34,6 +34,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
   </head>
   <body>
     <header>
@@ -224,7 +225,7 @@
                       <a
                         class="dropdown-item"
                         style="margin:auto;"
-                        href="{% url 'cust-cart-page' %}"
+                        href="{% url 'cart-page' %}"
                         >Cart</a
                       >
                     </div>
@@ -335,7 +336,7 @@
                         class="dropdown-item"
                         style="margin:auto;"
                         href="{% url 'ret-merger' %}"
-                        >Sell a product</a
+                        >Mergers</a
                       >
                     </div>
                   </div>
@@ -345,19 +346,8 @@
                       <a
                         class="dropdown-item"
                         style="margin:auto;"
-                        href="{% url 'ret-merger' %}"
-                        >Bid on a merger</a
-                      >
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm">
-                      <a
-                        class="dropdown-item"
-                        style="margin:auto;"
-                        href="{% url 'ret-create-page' %}"
-                        >Sell a product</a
+                        href="{% url 'ret-merger-status' %}"
+                        >Merger Status</a
                       >
                     </div>
                   </div>
@@ -368,6 +358,17 @@
                         class="dropdown-item"
                         style="margin:auto;"
                         href="{% url 'ret-create-page' %}"
+                        >Sell a product</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm">
+                      <a
+                        class="dropdown-item"
+                        style="margin:auto;"
+                        href="{% url 'ret-manage-page' %}"
                         >Manage Items</a
                       >
                     </div>
@@ -378,7 +379,7 @@
                       <a
                         class="dropdown-item"
                         style="margin:auto;"
-                        href="{% url 'ret-create-page' %}"
+                        href="{% url 'profile-page' %}"
                         >Update Profile</a
                       >
                     </div>
@@ -400,14 +401,14 @@
                 {% endif %}
               </li>
 
-              
-
+          
               {% if logged_in == 1 %}
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cust-cart-page' %}">
+                    <a class="nav-link" href="{% url 'cart-page' %}">
                       <i class="fa fa-shopping-cart"></i>
                     </a>
                   <li>
+
                 {% else %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'auth-page' %}">
