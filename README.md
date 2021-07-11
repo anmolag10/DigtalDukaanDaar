@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/anmolag10/1_PacManBytes">
-    <img src="https://firebasestorage.googleapis.com/v0/b/pacmanbytes-8b0c7.appspot.com/o/Asset%206.png?alt=media&token=08aa9252-22a3-4bcb-8fb7-f1c11ff71df9" alt="Logo" width="260" height="150">
+    <img src="Images/card 3.png" alt="Logo" width="260" height="150">
   </a>
 
   <h3 align="center">Pac-Man-Bytes</h3>
