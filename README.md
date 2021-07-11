@@ -43,10 +43,10 @@
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+<!-- Documentation -->
+## Documentation
 
-few lines about the project .......................................................
+
 
 ### Built With
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
