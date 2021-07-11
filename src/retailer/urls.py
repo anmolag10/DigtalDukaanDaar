@@ -8,5 +8,6 @@ urlpatterns = [
     path('manage_items/', retailerViews.manageItemView, name = 'ret-manage-page'),
     path('create_items/', retailerViews.createProductView, name = 'ret-create-page'),
     path('analytics/', retailerViews.analyticsView, name = 'ret-analytics'),
+    path('merger-status/', retailerViews.mergerStatusView, name='ret-merger-status'),
     path('merger/', retailerViews.mergerView, name = 'ret-merger'),
 ]

@@ -54,14 +54,37 @@ def checkLogIn(request):
 def cartView(request):
 	return
 
-def postPinFilter(request, *args, **kwargs):
-	# redirects #
 
-	pinFilter = request.POST.get('pinCodeFilter')
-	return redirect()
+def storesView(request, store_id, *args, **kwargs):
+	redirect_auth = redirect("/auth/")
 
-def storesView(request, *args, **kwargs):
-	return render(request, 'customer-store-item.html')
+	user_name, logged_in, user_uid = checkLogIn(request)
+	context = {
+		"user_name":user_name[:17],
+		"logged_in":logged_in,
+		"def_pin": 574101,
+		"user_type": "3",
+		"toggle": 0,
+	}
+	if(logged_in):
+		user = FireStore.collection(u'Users').document(user_uid).get().to_dict()
+		context["user_type"] = user["User_Type"]
+		context['def_pin'] = user["Pin_Code"]
+	else:
+		return redirect_auth
+
+	retail_products_ref = FireStore.collection(u'Retail_Product')
+	products = []
+	for doc in retail_products_ref.stream():
+		product = doc.to_dict()
+		if(product["Seller_Uid"] == store_id):
+			products.append(product)
+
+	store = FireStore.collection(u'Users').document(store_id).get().to_dict()
+	context["products"] = products
+	context["store_name"] = store["User_Name"]
+
+	return render(request, 'customer-store-item.html', context)
 
 def itemsView(request):
 	return

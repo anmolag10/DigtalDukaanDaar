@@ -1,4 +1,4 @@
-<!-- extends layout goes here -->
+{% extends 'layout.html' %}
 {% load static %}
 
 {% block specif_style  %}
@@ -32,7 +32,7 @@
     <h2 class = "page-title">Manage Items</h2>
     </div>
     <div class="col-lg-4">  
-    <a href='/create-post/'>  <button href = "/create-post/" class = "btn btn-primary" type="link">Add Post</buttton></a>
+    <a href="{% url 'ret-create-page' %}">  <button href = "/create-post/" class = "btn btn-primary" type="link">Add Item</buttton></a>
     </div>
     </div>
     
@@ -45,13 +45,13 @@
           {% comment %} <th colspan="2">Action<th> {% endcomment %}
         </thead>
         <tbody>
-          {% for post in Posts %}
+          {% for product in products %}
           
             <tr>
               <td>{{ forloop.counter }}</td>
-              <td>{{ post.title }}</td>
+              <td>{{ product.Product_Name }}</td>
               <td><a href = "{% url 'blog_edit' blog_id=post.Blog_id %}" class="edit">Edit</a></td>
-              <td><a href = "{% url 'blog_delete' blog_id=post.Blog_id %}" class = "delete">Delete</a></td>
+              <td><a href = "{% url 'product_delete' product_id=product.Product_Id %}" class = "delete">Delete</a></td>
             </tr>
 
           {% endfor %}

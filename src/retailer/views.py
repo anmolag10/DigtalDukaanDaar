@@ -78,6 +78,7 @@ def createProductView(request):
 		"logged_in":logged_in,
 		"def_pin": 574101,
 		"user_type": "3",
+		"toggle": 0,
 	}
 
 	if(not logged_in):
@@ -104,7 +105,7 @@ def createProductView(request):
 
 	image_dir = os.path.join(image_dir, prod_image)
 	
-	
+
 	if(prod_name and prod_desc and prod_price and prod_cat and prod_quant and prod_type and prod_image):
 		try:
 			storage = fireBase.storage()
@@ -140,7 +141,41 @@ def createProductView(request):
 
 
 def manageItemView(request):
-	return render(request, 'Retailer/Manage-Items.html')
+	redirect_home = redirect('/home/')
+	redirect_auth = redirect('/auth/')
+
+	user_name, logged_in, user_uid = checkLogIn(request)
+
+	context = {
+		"user_name":user_name[:17],
+		"logged_in":logged_in,
+		"def_pin": 574101,
+		"user_type": "3",
+		"toggle": 0,
+	}
+
+	if(not logged_in):
+		return redirect_auth
+	else:
+		user = FireStore.collection(u'Users').document(user_uid).get().to_dict()
+		context["user_type"] = user["User_Type"]
+		context['def_pin'] = user["Pin_Code"]
+		if(user['User_Type'] not in ["1","2"] ):
+			return redirect_home
+
+	retail_products_ref = FireStore.collection(u'Retail_Product')
+	products = []
+	for doc in retail_products_ref.stream():
+		product = doc.to_dict()
+		if(product["Seller_Uid"] == user_uid):
+			products.append(product)
+
+	
+	store = FireStore.collection(u'Users').document(user_uid).get().to_dict()
+	context["products"] = products
+	context["store_name"] = store["User_Name"]
+
+	return render(request, 'Retailer/Manage-Items.html', context)
 
 def analyticsView(request):
 	return
@@ -156,6 +191,7 @@ def mergerView(request):
 		"logged_in":logged_in,
 		"def_pin": 574101,
 		"user_type": "3",
+		"toggle": 0,
 	}
 
 	if(not logged_in):
@@ -168,3 +204,28 @@ def mergerView(request):
 			return redirect_home
 
 	return render(request, 'merger.html', context)
+
+def mergerStatusView(request):
+	redirect_home = redirect('/home/')
+	redirect_auth = redirect('/auth/')
+
+	user_name, logged_in, user_uid = checkLogIn(request)
+
+	context = {
+		"user_name":user_name[:17],
+		"logged_in":logged_in,
+		"def_pin": 574101,
+		"user_type": "3",
+		"toggle": 0,
+	}
+
+	if(not logged_in):
+		return redirect_auth
+	else:
+		user = FireStore.collection(u'Users').document(user_uid).get().to_dict()
+		context["user_type"] = user["User_Type"]
+		context['def_pin'] = user["Pin_Code"]
+		if(user['User_Type'] not in ["2"] ):
+			return redirect_home
+
+	return render(request, 'mergerstatus.html', context)

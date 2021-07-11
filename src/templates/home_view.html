@@ -154,6 +154,38 @@
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="row">
+                    {% for store in stores %}
+                        <div class="col-md-4 mb-3">
+                          <div class="card">
+                            {% if store.Img_Url == "" %}
+                            <img
+                              class="img-fluid"
+                              alt="100%x280"
+                              src="https://content3.jdmagicbox.com/comp/tumkur/s2/9999px816.x816.171014123453.h5s2/catalogue/sri-narasimha-stores-gubbi-tumkur-grocery-stores-pq37z2kxsy.jpg"
+                            />
+                            {% else %}
+                            <img
+                              class="img-fluid"
+                              alt="100%x280"
+                              src="{{store.Img_Url}}"
+                            />
+                            {% endif %}
+                            <div class="card-body">
+                              <h4 class="card-title">{{store.User_Name}}</h4>
+                              <p class="card-text">
+                                With supporting text below as a natural lead-in to
+                                additional content.<br>
+                                pincode: {{store.Pin_Code}}
+                              </p>
+                              <form action = "{% url 'cust-stores-page' store_id=store.Uid %}">
+                                <button type="submit" class="btn btn-success">Visit Us</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                    {% endfor %}
+
+                    {% comment %}
                     <div class="col-md-4 mb-3">
                       <div class="card">
                         <img
@@ -206,64 +238,34 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4 mb-3">
-                      <div class="card">
-                        <img
-                          class="img-fluid"
-                          alt="100%x280"
-                          src="https://content3.jdmagicbox.com/comp/def_content/spice-retailers/shutterstock-1154763361-spice-retailers-15-v4hhf.jpg"
-                        />
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            GukalNandan Provisonal Store
-                          </h4>
-                          <p class="card-text">
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <div class="card">
-                        <img
-                          class="img-fluid"
-                          alt="100%x280"
-                          src="https://content3.jdmagicbox.com/comp/def_content/spice-retailers/shutterstock-1154763361-spice-retailers-15-v4hhf.jpg"
-                        />
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            GukalNandan Provisonal Store
-                          </h4>
-                          <p class="card-text">
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <div class="card">
-                        <img
-                          class="img-fluid"
-                          alt="100%x280"
-                          src="https://content3.jdmagicbox.com/comp/def_content/spice-retailers/shutterstock-1154763361-spice-retailers-15-v4hhf.jpg"
-                        />
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            GukalNandan Provisonal Store
-                          </h4>
-                          <p class="card-text">
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    {% endcomment %}
+
                   </div>
                 </div>
                 <div class="carousel-item">
                   <div class="row">
+
+                    {% for store in stores %}
+                        <div class="col-md-4 mb-3">
+                          <div class="card">
+                            <img
+                              class="img-fluid"
+                              alt="100%x280"
+                              src="https://content3.jdmagicbox.com/comp/tumkur/s2/9999px816.x816.171014123453.h5s2/catalogue/sri-narasimha-stores-gubbi-tumkur-grocery-stores-pq37z2kxsy.jpg"
+                            />
+                            <div class="card-body">
+                              <h4 class="card-title">store.User_Name</h4>
+                              <p class="card-text">
+                                With supporting text below as a natural lead-in to
+                                additional content.
+                                pincode: {{store.Pin_Code}}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                    {% endfor %}
+
+                    {% comment %}
                     <div class="col-md-4 mb-3">
                       <div class="card">
                         <img
@@ -318,64 +320,35 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4 mb-3">
-                      <div class="card">
-                        <img
-                          class="img-fluid"
-                          alt="100%x280"
-                          src="https://content3.jdmagicbox.com/comp/def_content/spice-retailers/shutterstock-1154763361-spice-retailers-15-v4hhf.jpg"
-                        />
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            GukalNandan Provisonal Store
-                          </h4>
-                          <p class="card-text">
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <div class="card">
-                        <img
-                          class="img-fluid"
-                          alt="100%x280"
-                          src="https://content3.jdmagicbox.com/comp/def_content/spice-retailers/shutterstock-1154763361-spice-retailers-15-v4hhf.jpg"
-                        />
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            GukalNandan Provisonal Store
-                          </h4>
-                          <p class="card-text">
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <div class="card">
-                        <img
-                          class="img-fluid"
-                          alt="100%x280"
-                          src="https://content3.jdmagicbox.com/comp/def_content/spice-retailers/shutterstock-1154763361-spice-retailers-15-v4hhf.jpg"
-                        />
-                        <div class="card-body">
-                          <h4 class="card-title">
-                            GukalNandan Provisonal Store
-                          </h4>
-                          <p class="card-text">
-                            With supporting text below as a natural lead-in to
-                            additional content.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    {% endcomment %}
+
                   </div>
                 </div>
                 <div class="carousel-item">
                   <div class="row">
+
+
+                    {% for store in stores %}
+                        <div class="col-md-4 mb-3">
+                          <div class="card">
+                            <img
+                              class="img-fluid"
+                              alt="100%x280"
+                              src="https://content3.jdmagicbox.com/comp/tumkur/s2/9999px816.x816.171014123453.h5s2/catalogue/sri-narasimha-stores-gubbi-tumkur-grocery-stores-pq37z2kxsy.jpg"
+                            />
+                            <div class="card-body">
+                              <h4 class="card-title">store.User_Name</h4>
+                              <p class="card-text">
+                                With supporting text below as a natural lead-in to
+                                additional content.
+                                pincode: {{store.Pin_Code}}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                    {% endfor %}
+
+                    {% comment %}
                     <div class="col-md-4 mb-3">
                       <div class="card">
                         <img
@@ -424,6 +397,8 @@
                         </div>
                       </div>
                     </div>
+                    {% endcomment %}
+
                   </div>
                 </div>
               </div>

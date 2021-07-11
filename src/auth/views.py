@@ -74,6 +74,8 @@ def postAuthView(request, is_signin, *args, **kwargs):
 								u"Email": new_email,
 								u"User_Type": user_type,
 								u"Pin_Code": pin_code,
+								u"Img_Url": "",
+								u"Gst_In": "",
 						}
 				fb_auth.send_email_verification(user['idToken'])
 				FireStore.collection(u'Users').document(uid).set(data)

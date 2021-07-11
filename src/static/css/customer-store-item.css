@@ -13,7 +13,11 @@
   box-sizing: border-box;
 }
 
-
+.page-container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  margin: auto;
+}
 
 
 h1 {

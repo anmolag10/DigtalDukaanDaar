@@ -1,4 +1,4 @@
-<!-- extends layout goes here -->
+{% extends 'layout.html' %}
 {% load static %}
 
 {% block specif_style  %}
@@ -16,7 +16,7 @@
 {% block content %}
  <!-- header-area -->
 
-
+<div class="page-container">
 <!-- Admin-Page-Wrapper -->
 <div class = "admin-wrapper">
 
@@ -32,38 +32,39 @@
     <h2 class = "page-title">Manage Items</h2>
     </div>
     <div class="col-lg-4">  
-    <a href='/create-post/'>  <button href = "/create-post/" class = "btn btn-primary" type="link">Add Post</buttton></a>
+    <a href="{% url 'ret-create-page' %}">  <button type="button" class="btn btn-success">Add Item</button></a>
     </div>
     </div>
-    
+
       <table class="table table-bordered">
         <thead>
           <th>S.No</th>
           <th>Product</th>
           <th>Action</th>
           <th>Action</th>
-          {% comment %} <th colspan="2">Action<th> {% endcomment %}
         </thead>
+
         <tbody>
-          {% for post in Posts %}
+          {% for product in products %}
           
             <tr>
               <td>{{ forloop.counter }}</td>
-              <td>{{ post.title }}</td>
-              <td><a href = "{% url 'blog_edit' blog_id=post.Blog_id %}" class="edit">Edit</a></td>
-              <td><a href = "{% url 'blog_delete' blog_id=post.Blog_id %}" class = "delete">Delete</a></td>
+              <td>{{ product.Product_Name }}</td>
+              <td><a href = "" class="edit">Edit</a></td>
+              <td><a href = "" class = "delete">Delete</a></td>
             </tr>
 
           {% endfor %}
 
         </tbody>
       </table>
+      
     </div>
   </div>
   <!-- // Admin-Content -->
 </div>
 <!-- // Admin-Page-Wrapper -->
-
+</div>
 
 <!-- JQUERY --> 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>

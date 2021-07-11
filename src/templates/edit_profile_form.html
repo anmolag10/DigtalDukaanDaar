@@ -1,95 +1,101 @@
+{% extends 'layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
+{% block specific_styles %}
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>edit profile form - Bootdey.com</title>
+    <title>edit profile form</title>
     <link href="{% static 'css/styles.css '%}" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+
+{% endblock specific_styles %}
+
+{% block content%}
+<div class="page-container">
 <div class="container bootstrap snippets bootdey">
     <h1 class="clrtxt"><span class="glyphicon glyphicon-user clrtxt"></span>Edit Profile</h1>
       <hr>
 	<div class="row">
       <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-          <h6>Upload a different photo...</h6>
-
-          
-            <form action="" method="post">
-              <input type="file" class="form-control">
-              <div class="upload-btn-container">
-                <button type="button" class="btn btn-success btn2">Upload</button>
-              </div>
-            </form>
-         
-        </div>
-      </div>
       
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
-        {% comment %}
-        <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
-          <i class="fa fa-coffee"></i>
-          This is an <strong>.alert</strong>. Use this to show important messages to the user.
-        </div>
-        {% end comment %}
+        {% if messages %}
+        {% for message in messages %}
+            {% if message.extra_tags == "NETWORK_ERROR_UPDATE" %}
+                <div class="alert alert-danger alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a> 
+                <i class="fa fa-coffee"></i>
+                This is an <strong>.alert</strong>. {{message}}.
+              </div>
 
+            {% elif message.extra_tags == "INSUFFICIENT_DATA_UPDATE" %}      
+                <div class="alert alert-danger alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a> 
+                <i class="fa fa-coffee"></i>
+                This is an <strong>.alert</strong>. {{message}}r.
+              </div>       
+            {% endif %}
+
+        {% endfor %}
+    {% endif %}
+        
+<div class="form-center">
         <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" method="POST" action="{%url 'profile-page'%}"> {% csrf_token %}
+          
+          <div class="col-md-3">
+          
+        <div class="text-center">
+          <h6>Upload aphoto...</h6>
+
+          
+              <input type="file" class="form-control" name="upImg">
+              <div class="upload-btn-container">
+              </div>
+            
+         
+        </div>
+      </div>
+
           <div class="form-group">
             <label class="col-lg-3 control-label">User Name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="dey-dey">
+              <input class="form-control" type="text" value="{{user_data.User_Name}}" name="upUserName">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Pin Code:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="bootdey">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Address:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input class="form-control" type="text" value="{{user_data.Pin_Code}}" name="upPinCode">
             </div>
           </div>
           <!-- only for retailers and suppliers -->
           <div class="form-group">
             <label class="col-lg-3 control-label">GSTIN :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input class="form-control" type="text" value=""
+              name="upGst">
             </div>
           <!-- only for retailers and suppliers -->
 
           </div>
           <div class="aligned-div">
-          <button type="button" class="btn btn-success btn1">Submit</button>
+          <button type="submit" class="btn btn-success btn1">Submit</button>
           </div>
         </form>
       </div>
+      </div>
   </div>
 </div>
-<hr>
 
-<style type="text/css">
-				                
-body{margin-top:20px;}				              
-</style>
+</div>
+<hr>
 
 <script type="text/javascript">
 
 </script>
-</body>
-</html>
+
+
+{% endblock content%}

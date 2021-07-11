@@ -86,3 +86,9 @@ select {
     padding-right: 30px;
     font-size: 1.5rem;
 }
+
+.page-container{
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 100px !important;
+}

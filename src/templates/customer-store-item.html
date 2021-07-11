@@ -6,10 +6,34 @@
 {% endblock specific_styles %}
 
 {% block content %}
+<div class="page-container">
     <div class="container">
        
-        <h1 style="padding-top: 10px;">  	&#x1F3EA Govind Provisonal Store</h1>
+        <h1 style="padding-top: 10px;">  	&#x1F3EA {{ store_name }}</h1>
       <ul class="cards">
+        {% for product in products %}
+        <li class="cards_item">
+          <div class="card">
+            <div class="card_image">
+              <img
+                src="{{ product.Img_Url }}"
+              />
+            </div>
+            <div class="card_content">
+              <h2 class="card_title" style="text-align: center">{{product.Product_Name}}</h2>
+              <p class="card_text">
+                <bold>Sold By: </bold> {{ store_name}} <br />
+                Price : {{product.Product_Price}}
+                <br/>
+                Available Quantity: {{product.Product_Quantity}}
+              </p>
+              <form action="/addtocart"> <button  type="submit" class="btn-card card_btn">Add</button></form>
+              
+            </div>
+          </div>
+        </li>
+        {% endfor%}
+        {% comment %}
         <li class="cards_item">
           <div class="card">
             <div class="card_image">
@@ -44,7 +68,7 @@
                 <button class="btn-card card_btn">Add</button>
               </div>
             </div>
-          </li>
+        </li>
           <li class="cards_item">
             <div class="card">
               <div class="card_image">
@@ -215,6 +239,8 @@
               </div>
             </div>
           </li>
+      {% endcomment %}
       </ul>
     </div>
+  </div>
 {% endblock content %}

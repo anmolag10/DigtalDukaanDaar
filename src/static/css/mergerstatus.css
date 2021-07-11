@@ -40,3 +40,9 @@
   .text-primary {
     color: rgb(32, 117, 71);
   }
+
+  .page-container {
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
