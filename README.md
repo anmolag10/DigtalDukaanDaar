@@ -9,7 +9,7 @@
   
 
   <p align="center">
-  <img src="Images/2.jpg" width=838>
+  <img src="Images/2.jpg" >
   <img src="#">
     <br />
     <a href="https://github.com/anmolag10/1_PacManBytes/blob/main/README.md"><strong>Explore the docs »</strong></a>
