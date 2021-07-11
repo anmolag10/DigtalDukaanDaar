@@ -200,8 +200,9 @@ def mergerView(request):
 		user = FireStore.collection(u'Users').document(user_uid).get().to_dict()
 		context["user_type"] = user["User_Type"]
 		context['def_pin'] = user["Pin_Code"]
-		if(user['User_Type'] not in ["2"] ):
+		if(user['User_Type'] not in ["2","1"] ):
 			return redirect_home
+
 
 	return render(request, 'merger.html', context)
 
@@ -225,7 +226,7 @@ def mergerStatusView(request):
 		user = FireStore.collection(u'Users').document(user_uid).get().to_dict()
 		context["user_type"] = user["User_Type"]
 		context['def_pin'] = user["Pin_Code"]
-		if(user['User_Type'] not in ["2"] ):
+		if(user['User_Type'] not in ["2", "1"] ):
 			return redirect_home
 
 	return render(request, 'mergerstatus.html', context)

@@ -148,8 +148,28 @@ def profileView(request, *args, **kwargs):
 
 	return render(request, 'edit_profile_form.html', context)
 
-def aboutView(request, *args, **kwargs):
-	return
+def searchView(request, *args, **kwargs):
+	redirect_auth = redirect('/auth/')
+	redirect_home = redirect('/home/')
+
+	user_name, logged_in, user_uid = checkLogIn(request)
+	context = {
+		"user_name":user_name[:17],
+		"logged_in":logged_in,
+		"def_pin": "574101",
+		"user_type": "3",
+		"toggle": 0,
+	}
+
+	if(logged_in):
+		user = FireStore.collection(u'Users').document(user_uid).get().to_dict()
+		context["user_type"] = user["User_Type"]
+		context['def_pin'] = user["Pin_Code"]
+		context["user_data"] = user
+	else:
+		return redirect_auth
+
+	return render(request, 'customer-store-search.html', context)
 
 def redirectHome(request, *args, **kwargs):
 	redirect_home = redirect('/home/')

@@ -51,6 +51,7 @@
           <form
             class="form-inline justify-content-center"
             style="text-align: center"
+            action="{% url 'search-page' %}"
           >
             <input
               class="form-control"
@@ -403,11 +404,16 @@
 
           
               {% if logged_in == 1 %}
+                {% if user_type != "1" %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'cart-page' %}">
                       <i class="fa fa-shopping-cart"></i>
                     </a>
                   <li>
+                {% else %}
+                <li class="nav-item">
+                </li>
+                {% endif %}
 
                 {% else %}
                   <li class="nav-item">
@@ -426,7 +432,8 @@
     {% endblock content %}
     
     <!-- Site footer -->
-    <footer class="site-footer">
+    <div class="foot">
+    <footer class="site-footer foot">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
@@ -452,6 +459,8 @@
         </div>
       </div>
     </footer>
+  </div>
+
   </body>
 </html>
 

@@ -226,9 +226,10 @@
     text-align: center;
     margin: 4px 2px;
 }
+
 .btn1 {
     width: 150px;
-    font-size: 50px;
+    font-size: 20px;
 }
 .upload-btn-container{
     margin: auto;

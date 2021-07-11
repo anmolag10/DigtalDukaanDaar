@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+{% extends 'layout.html' %}
+{% load static %}
+  {% block specific_styles %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,184 +34,11 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="css\customer-store-search.css" />
-  </head>
-  <body>
-    <header>
-      <nav
-        class="
-          navbar navbar-expand-md navbar-dark
-          fixed-top
-          bg-dark
-          justify-content-between
-        "
-      >
-        <a class="navbar-brand" href="#"><bold>DigitalDukaanDaar</bold></a>
-        <div>
-          <form
-            class="form-inline justify-content-center"
-            style="text-align: center"
-          >
-            <input
-              class="form-control"
-              type="text"
-              placeholder="Search"
-              style="width: 576px; margin-right: 10px"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-        <div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  data-toggle="dropdown"
-                >
-                  <i class="fa fa-map-marker"></i> 122004
-                </a>
-                <div
-                  class="dropdown-menu"
-                  style="padding-top: 0px; padding-bottom: 0px"
-                >
-                  <form class="form-inline" action="#">
-                    <input
-                      id="pincode"
-                      placeholder="Pincode"
-                      name="pincode"
-                      type="text"
-                    />
-                  </form>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  data-toggle="dropdown"
-                >
-                  <i class="fa fa-shopping-cart"></i>
-                </a>
-                <div class="dropdown-menu">
-                  <div class="row">
-                    <div class="col-sm">
-                      <a
-                        class="dropdown-item"
-                        style="padding-left: 15px; padding-right: 10px"
-                        href="#"
-                        >Product1</a
-                      >
-                    </div>
-                    <div class="col-sm">
-                      <form action="/">
-                        <button class="cart-delete" type="submit">
-                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      <a
-                        class="dropdown-item"
-                        style="padding-left: 15px; padding-right: 10px"
-                        href="#"
-                        >Product1</a
-                      >
-                    </div>
-                    <div class="col-sm">
-                      <form action="/">
-                        <button class="cart-delete" type="submit">
-                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      <a
-                        class="dropdown-item"
-                        style="padding-left: 15px; padding-right: 10px"
-                        href="#"
-                        >Product1</a
-                      >
-                    </div>
-                    <div class="col-sm">
-                      <form action="/">
-                        <button class="cart-delete" type="submit">
-                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      <a
-                        class="dropdown-item"
-                        style="padding-left: 15px; padding-right: 10px"
-                        href="#"
-                        >Product1</a
-                      >
-                    </div>
-                    <div class="col-sm">
-                      <form action="/">
-                        <button class="cart-delete" type="submit">
-                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm">
-                      <a
-                        class="dropdown-item"
-                        style="padding-left: 15px; padding-right: 10px"
-                        href="#"
-                        >Product1</a
-                      >
-                    </div>
-                    <div class="col-sm">
-                      <form action="/">
-                        <button class="cart-delete" type="submit">
-                          <i class="fa fa-trash-o" style="font-size: 20px"></i>
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                  <span class="dropdown-item">Total Price: </span>
-                </div>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Log in</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+    <link rel="stylesheet" href="{% static 'css\customer-store-search.css' %}" />
+  {% endblock specific_styles %}
+  {% block content %}
+    
+<div class="page-container">
     <div class="container">
       <h1 style="font-size: xx-large; margin-top: 30px; font-weight: bolder">
         Trending Products 📈
@@ -494,5 +321,6 @@
         </li>
       </ul>
     </div>
-  </body>
-</html>
+  </div>
+{% endblock content %}
+
