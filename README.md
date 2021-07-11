@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/anmolag10/1_PacManBytes">
-    <img src="Images/card 3.png" alt="Logo" width="260" height="150">
+    <img src="Images/card 3.png" alt="Logo">
   </a>
 
   <h3 align="center">Pac-Man-Bytes</h3>
