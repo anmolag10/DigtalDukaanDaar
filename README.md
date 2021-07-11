@@ -6,10 +6,11 @@
     <img src="Images/card 3.png" alt="Logo">
   </a>
 
-  <h3 align="center">Pac-Man-Bytes</h3>
+  
 
   <p align="center">
-    a line about the project...............................................
+  <img src="#">
+  <img src="#">
     <br />
     <a href="https://github.com/anmolag10/1_PacManBytes/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
