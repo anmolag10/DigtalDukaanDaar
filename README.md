@@ -53,7 +53,7 @@
 
 1. Fork and Clone
     <ol>
-    <li>Fork the Team-Ankuram-maxo Repo</li>
+    <li>Fork the Repo DigitalDukaanDaar</li>
     <li>Clone the repo to you computer.</li>
     </ol>
 
